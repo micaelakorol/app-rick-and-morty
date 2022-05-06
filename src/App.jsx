@@ -1,6 +1,7 @@
   import React, { useState } from 'react'
   import Formulario from './components/Formulario'
   import PintarDatos from './components/PintarDatos'
+  import '../src/App.css'
 
   const App = () => {
 
