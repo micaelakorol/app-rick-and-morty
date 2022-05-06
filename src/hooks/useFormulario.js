@@ -1,22 +1,20 @@
 import { useState } from 'react'
 
-export const useFormulario = (initialState = {}) => { //se inicia como un obj vacio {}
+export const useFormulario = (initialState = {}) => { 
 
-const [inputs, setInputs] = useState(initialState) //inputs y set.. guarda lo que se ingresa en el initial..
+const [inputs, setInputs] = useState(initialState) 
 
+//accedo a los valores , realizo una copia
 
 const handleChange = (e) => {
-  const {name , value , checked , type} = e.target //accede a esos valores: name,value..etc
+  const {name , value , checked , type} = e.target 
     setInputs((old) => ({  
-      ...old, //haca una copia de setInputs(del objeto)
-    [name]: type === "checkbox" ? checked : value,  //pequeña validacion cuando tenemos un input tipo checkbox
-    
-
+      ...old, 
+    [name]: type === "checkbox" ? checked : value,  //validacion en caso de un input checkbox
     }))
 }
-
 const reset = () => {
-    setInputs(initialState) //reiniciar el formulario
+    setInputs(initialState)
 }
 //devolvemos:
   return [inputs,handleChange,reset]
