@@ -17,7 +17,7 @@
 
   const consumirApi = async(nombre) => {
   //SPINNER: 1-
-            setLoading(true)  //sppiner pasa a true
+            setLoading(true) 
 
   try {
 
